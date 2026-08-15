@@ -1,0 +1,1312 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.app {
+  min-height: 100vh;
+  background: #0f172a;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  background: #020617;
+  color: #f8fafc;
+  padding: 45px 20px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.header-content {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 38px;
+  color: #38bdf8;
+  font-weight: 800;
+}
+
+.header p {
+  margin: 10px 0 0;
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+/* ========================================
+   MAIN
+======================================== */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+/* ========================================
+   UPLOAD
+======================================== */
+
+.upload-card {
+  background: #111827;
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+  border: 1px solid #334155;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  margin-bottom: 30px;
+}
+
+.upload-icon {
+  font-size: 45px;
+}
+
+.upload-card h2 {
+  margin: 10px 0;
+  font-size: 28px;
+  color: #22d3ee;
+  font-weight: 800;
+}
+
+.upload-description {
+  color: #94a3b8;
+  max-width: 650px;
+  margin: 0 auto 25px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   FILE
+======================================== */
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 12px;
+  border: 1px dashed #3b82f6;
+  border-radius: 10px;
+  background: #020617;
+  color: #e2e8f0;
+}
+
+.selected-file {
+  margin: 15px auto;
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.analyze-button {
+  padding: 13px 30px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.analyze-button:hover {
+  background: #1d4ed8;
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   ERROR
+======================================== */
+
+.error {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #450a0a;
+  color: #fca5a5;
+  font-weight: 600;
+}
+
+/* ========================================
+   RESULTS
+======================================== */
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ========================================
+   CANDIDATE
+======================================== */
+
+.candidate-card {
+  background: #111827;
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border: 1px solid #334155;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.candidate-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #172554;
+  color: #60a5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  border: 1px solid #2563eb;
+}
+
+.small-title {
+  margin: 0 0 5px;
+  color: #22d3ee;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.candidate-card h2 {
+  margin: 0;
+  color: #60a5fa;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+/* ========================================
+   SECTION
+======================================== */
+
+.section-card {
+  background: #111827;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #334155;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section-card h2 {
+  margin-top: 0;
+  color: #22d3ee;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.section-description {
+  color: #94a3b8;
+}
+
+/* ========================================
+   SKILLS
+======================================== */
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.skill-badge {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #172554;
+  color: #93c5fd;
+  border: 1px solid #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ========================================
+   RECOMMENDATION
+======================================== */
+
+.recommendation-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.job-count {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #172554;
+  color: #60a5fa;
+  border: 1px solid #2563eb;
+  font-weight: 700;
+}
+
+/* ========================================
+   JOB
+======================================== */
+
+.job-card {
+  margin-top: 25px;
+  padding: 28px;
+  border: 1px solid #334155;
+  border-radius: 15px;
+  background: #0f172a;
+}
+
+.top-job {
+  border-color: #2563eb;
+  box-shadow: 0 0 25px rgba(37, 99, 235, 0.12);
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-header h2 {
+  margin: 5px 0 0;
+  font-size: 25px;
+  color: #f1f5f9;
+  font-weight: 800;
+}
+
+.job-label {
+  margin: 0;
+  color: #60a5fa;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+/* ========================================
+   COMPANY
+======================================== */
+
+.company-name {
+  margin: 7px 0 0;
+  color: #38bdf8;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* ========================================
+   RANKING
+======================================== */
+
+.rank-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  background: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #475569;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.top-rank {
+  background: #422006;
+  color: #fbbf24;
+  border-color: #92400e;
+}
+
+/* ========================================
+   MATCH
+======================================== */
+
+.match-score {
+  text-align: right;
+}
+
+.match-score span {
+  display: block;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.match-score strong {
+  display: block;
+  font-size: 30px;
+  color: #4ade80;
+  font-weight: 800;
+}
+
+.score-excellent strong {
+  color: #4ade80;
+}
+
+.score-good strong {
+  color: #60a5fa;
+}
+
+.score-average strong {
+  color: #facc15;
+}
+
+.score-low strong {
+  color: #f87171;
+}
+
+.match-section {
+  margin: 25px 0;
+  padding: 18px;
+  background: #071a12;
+  border: 1px solid #14532d;
+  border-radius: 12px;
+}
+
+.match-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.match-header span {
+  color: #86efac;
+  font-weight: 700;
+}
+
+.match-header strong {
+  color: #4ade80;
+}
+
+.match-bar {
+  width: 100%;
+  height: 12px;
+  background: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.match-fill {
+  height: 100%;
+  background: #22c55e;
+  border-radius: 10px;
+  transition: width 0.7s ease;
+}
+
+/* ========================================
+   SKILL GROUP
+======================================== */
+
+.skill-group {
+  margin-top: 25px;
+}
+
+.skill-group h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: #e2e8f0;
+  font-weight: 800;
+}
+
+.section-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.exact-dot {
+  background: #22c55e;
+}
+
+.related-dot {
+  background: #3b82f6;
+}
+
+.missing-dot {
+  background: #ef4444;
+}
+
+/* ========================================
+   EXACT
+======================================== */
+
+.exact-skills span {
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #052e16;
+  color: #4ade80;
+  border: 1px solid #166534;
+  font-weight: 600;
+}
+
+/* ========================================
+   RELATED
+======================================== */
+
+.related-skills span {
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #172554;
+  color: #60a5fa;
+  border: 1px solid #2563eb;
+  font-weight: 600;
+}
+
+/* ========================================
+   MISSING
+======================================== */
+
+.missing-skills span {
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #450a0a;
+  color: #f87171;
+  border: 1px solid #991b1b;
+  font-weight: 600;
+}
+
+.no-missing {
+  padding: 8px 13px;
+  border-radius: 20px;
+  background: #052e16;
+  color: #4ade80;
+  border: 1px solid #166534;
+  font-weight: 600;
+}
+
+/* ========================================
+   SKILL GAP
+======================================== */
+
+.skill-gap {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #111c35;
+  border: 1px solid #334155;
+}
+
+.skill-gap-header h4 {
+  margin: 0;
+  color: #fbbf24;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.skill-gap-header p {
+  margin: 7px 0 0;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.skill-gap-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.skill-gap-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 20px;
+  background: #422006;
+  border: 1px solid #92400e;
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.gap-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.skill-gap-success {
+  margin-top: 15px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  background: #052e16;
+  border: 1px solid #166534;
+  color: #4ade80;
+  font-weight: 700;
+}
+
+/* ========================================
+   WHY THIS JOB
+======================================== */
+
+.why-job {
+  margin-top: 25px;
+  padding: 22px;
+  border-radius: 14px;
+  background: #172554;
+  border: 1px solid #1e40af;
+}
+
+.why-job h4 {
+  margin: 0 0 15px;
+  color: #60a5fa;
+  font-size: 18px;
+}
+
+.why-job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.why-job-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #e2e8f0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.why-job-icon {
+  color: #4ade80;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   SKILLS TO LEARN
+======================================== */
+
+.learning-card {
+  margin-top: 25px;
+}
+
+.learning-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.learning-heading h2 {
+  color: #fbbf24;
+}
+
+.learning-count {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #422006;
+  border: 1px solid #92400e;
+  color: #fbbf24;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.learning-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.learning-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  transition: 0.2s ease;
+}
+
+.learning-item:hover {
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+}
+
+.learning-rank {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #422006;
+  border: 1px solid #92400e;
+  color: #fbbf24;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.learning-info {
+  flex: 1;
+}
+
+.learning-info h3 {
+  margin: 0;
+  color: #f1f5f9;
+  font-size: 19px;
+}
+
+.learning-info p {
+  margin: 5px 0 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.learning-info strong {
+  color: #fbbf24;
+}
+
+.learning-arrow {
+  color: #fbbf24;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* ========================================
+   EMPTY
+======================================== */
+
+.no-results {
+  padding: 30px;
+  text-align: center;
+  color: #94a3b8;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .header {
+    padding: 35px 15px;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .header p {
+    font-size: 15px;
+  }
+
+  .container {
+    width: 94%;
+    margin: 25px auto;
+  }
+
+  .upload-card,
+  .section-card {
+    padding: 22px;
+  }
+
+  .candidate-card {
+    padding: 20px;
+  }
+
+  .candidate-card h2 {
+    font-size: 24px;
+  }
+
+  .job-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .match-score {
+    text-align: left;
+  }
+
+  .recommendation-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .learning-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .learning-item {
+    padding: 15px;
+  }
+
+  .learning-arrow {
+    display: none;
+  }
+
+  .why-job {
+    padding: 18px;
+  }
+
+}
+
+/* ========================================
+   VIEW JOB DETAILS BUTTON
+======================================== */
+
+.details-button {
+  width: 100%;
+  margin-top: 28px;
+  padding: 13px 20px;
+  border: 1px solid #2563eb;
+  border-radius: 10px;
+  background: #172554;
+  color: #60a5fa;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.details-button:hover {
+  background: #1e3a8a;
+  color: #ffffff;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   JOB DETAILS CARD
+======================================== */
+
+.job-details-card {
+  background: #111827;
+  color: #f8fafc;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #2563eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  scroll-margin-top: 25px;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.details-header h2 {
+  margin: 6px 0 0;
+  color: #f8fafc;
+  font-size: 28px;
+}
+
+.close-details {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #475569;
+  border-radius: 50%;
+  background: #1e293b;
+  color: #cbd5e1;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.close-details:hover {
+  background: #450a0a;
+  border-color: #ef4444;
+  color: #f87171;
+}
+
+
+/* ========================================
+   COMPANY
+======================================== */
+
+.details-company {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 25px;
+  padding: 18px;
+  background: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+
+.details-company-icon {
+  font-size: 28px;
+}
+
+.details-company strong {
+  color: #38bdf8;
+  font-size: 18px;
+}
+
+.details-label {
+  margin: 0 0 4px;
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   DETAILS SECTION
+======================================== */
+
+.details-section {
+  margin-top: 28px;
+}
+
+.details-section h3 {
+  margin: 0 0 8px;
+  color: #22d3ee;
+  font-size: 20px;
+}
+
+.details-description {
+  margin: 0 0 15px;
+  color: #cbd5e1;
+}
+
+
+/* ========================================
+   DETAILS SKILL BADGES
+======================================== */
+
+.job-details-card .skill-badge {
+  background: #172554;
+  color: #93c5fd;
+  border: 1px solid #1d4ed8;
+}
+
+
+/* ========================================
+   CLOSE DETAILS BUTTON
+======================================== */
+
+.details-close-button {
+  margin-top: 28px;
+  padding: 11px 22px;
+  border: 1px solid #64748b;
+  border-radius: 9px;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.details-close-button:hover {
+  background: #334155;
+  border-color: #94a3b8;
+}
+
+
+/* ========================================
+   LOADING
+======================================== */
+
+.details-loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.details-loading h2 {
+  color: #f8fafc;
+  margin: 12px 0 5px;
+}
+
+.details-loading p {
+  color: #94a3b8;
+}
+
+.loading-spinner {
+  width: 38px;
+  height: 38px;
+  margin: auto;
+  border: 4px solid #334155;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: details-spin 0.8s linear infinite;
+}
+
+@keyframes details-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ========================================
+   DETAILS ERROR
+======================================== */
+
+.details-error {
+  border-color: #dc2626;
+  background: #1f1111;
+}
+
+.details-error-icon {
+  font-size: 30px;
+}
+
+.details-error h2 {
+  color: #fca5a5;
+  margin: 10px 0;
+}
+
+.details-error p {
+  color: #fecaca;
+}
+
+/* =========================================================
+   JOB ACTIONS
+========================================================= */
+
+.job-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   VIEW JOB DETAILS
+========================================================= */
+
+.details-button {
+  width: 100%;
+  padding: 13px 20px;
+  border: 1px solid #2563eb;
+  border-radius: 10px;
+  background: #172554;
+  color: #60a5fa;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.details-button:hover {
+  background: #1e3a8a;
+  color: #ffffff;
+  border-color: #3b82f6;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   APPLY NOW
+========================================================= */
+
+.apply-button {
+  display: block;
+  width: 100%;
+  padding: 13px 20px;
+  border-radius: 10px;
+  background: #16a34a;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.apply-button:hover {
+  background: #15803d;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   NO APPLICATION LINK
+========================================================= */
+
+.no-application {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #94a3b8;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   JOB DETAILS CARD
+========================================================= */
+
+.job-details-card {
+  background: #111827;
+  color: #f8fafc;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #2563eb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  scroll-margin-top: 25px;
+}
+
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.details-header h2 {
+  margin: 6px 0 0;
+  color: #f8fafc;
+  font-size: 28px;
+}
+
+.close-details {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #475569;
+  border-radius: 50%;
+  background: #1e293b;
+  color: #cbd5e1;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.close-details:hover {
+  background: #450a0a;
+  border-color: #ef4444;
+  color: #f87171;
+}
+
+
+/* =========================================================
+   COMPANY DETAILS
+========================================================= */
+
+.company-details-list {
+  margin-top: 25px;
+}
+
+.company-details-list h3 {
+  margin-bottom: 15px;
+  color: #22d3ee;
+}
+
+.company-detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  margin-bottom: 12px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+.company-detail-item strong {
+  color: #38bdf8;
+  font-size: 17px;
+}
+
+.details-label {
+  margin: 0 0 5px;
+  color: #94a3b8;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SMALL APPLY BUTTON
+========================================================= */
+
+.small-apply-button {
+  padding: 9px 15px;
+  border-radius: 8px;
+  background: #16a34a;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.small-apply-button:hover {
+  background: #15803d;
+  color: #ffffff;
+}
+
+.small-no-link {
+  color: #94a3b8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   REQUIRED SKILLS
+========================================================= */
+
+.details-section {
+  margin-top: 28px;
+}
+
+.details-section h3 {
+  margin: 0 0 8px;
+  color: #22d3ee;
+  font-size: 20px;
+}
+
+.details-description {
+  margin: 0 0 15px;
+  color: #cbd5e1;
+}
+
+.job-details-card .skill-badge {
+  background: #172554;
+  color: #93c5fd;
+  border: 1px solid #1d4ed8;
+}
+
+
+/* =========================================================
+   CLOSE DETAILS
+========================================================= */
+
+.details-close-button {
+  margin-top: 28px;
+  padding: 11px 22px;
+  border: 1px solid #64748b;
+  border-radius: 9px;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.details-close-button:hover {
+  background: #334155;
+  border-color: #94a3b8;
+}
+
+
+/* =========================================================
+   DETAILS LOADING
+========================================================= */
+
+.details-loading {
+  text-align: center;
+  padding: 20px;
+}
+
+.details-loading h2 {
+  color: #f8fafc;
+  margin: 12px 0 5px;
+}
+
+.details-loading p {
+  color: #94a3b8;
+}
+
+.loading-spinner {
+  width: 38px;
+  height: 38px;
+  margin: auto;
+  border: 4px solid #334155;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: details-spin 0.8s linear infinite;
+}
+
+@keyframes details-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   DETAILS ERROR
+========================================================= */
+
+.details-error {
+  border-color: #dc2626;
+  background: #1f1111;
+}
+
+.details-error-icon {
+  font-size: 30px;
+}
+
+.details-error h2 {
+  color: #fca5a5;
+  margin: 10px 0;
+}
+
+.details-error p {
+  color: #fecaca;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .company-detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .small-apply-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .job-actions {
+    width: 100%;
+  }
+
+}
+
+
