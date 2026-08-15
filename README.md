@@ -1,57 +1,84 @@
-# Job Skill Graph
+# 🚀 Job Skill Graph
 
-A full-stack Job Skill Graph application built using Django REST Framework, React, and Neo4j/CognoDB.
+> **Turn your resume into a career roadmap.**
 
-## Features
+Job Skill Graph is a full-stack application that connects **candidates, skills, jobs, and companies** using a graph database.
 
-- Job management
-- Job listing and job details
-- Job search by skill
+The application analyzes a candidate's resume, extracts skills, compares them with job requirements, identifies skill gaps, discovers related skills, and recommends suitable jobs.
+
+---
+
+## 🎯 Project Objective
+
+The goal of this project is to demonstrate how a **graph database** can solve a real-world job-matching problem where relationships between entities are important.
+
+The system answers questions such as:
+
+- Which jobs match a candidate's skills?
+- What skills are missing for a particular job?
+- Which related skills can improve a candidate's match?
+- Which jobs are the best fit?
+- What skills should the candidate learn next?
+
+---
+
+## ✨ Features
+
+### 📄 Resume Processing
+
 - Resume PDF upload
-- Resume skill extraction
-- Candidate skill graph
-- Job matching
+- Candidate information extraction
+- Technical skill extraction
+- Candidate skill graph creation
+
+### 💼 Job Management
+
+- Create jobs
+- List jobs
+- View job details
+- Search jobs by skill
+- Company and application URL support
+
+### 🎯 Job Matching
+
+- Candidate-to-job skill matching
 - Match percentage calculation
+- Exact skill matching
+- Related-skill matching
+- Missing skill detection
 - Skill-gap analysis
-- Job recommendations
+
+### 🧠 Recommendations
+
+- Personalized job recommendations
+- Job ranking based on compatibility
 - Skills-to-learn recommendations
-- Application URLs
+- Related skill discovery
 
-## Tech Stack
+---
 
-### Backend
+# 🧠 Why a Graph Database?
 
-- Python
-- Django
-- Django REST Framework
-- Neo4j / CognoDB
+Job matching is fundamentally a **relationship problem**.
 
-### Frontend
+A candidate has skills, jobs require skills, companies offer jobs, and skills can be related to other skills.
 
-- React
-- Vite
-- JavaScript
-- CSS
+A traditional relational database could store these entities in separate tables, but complex matching would require multiple JOIN operations.
 
-## API
+A graph database represents these relationships directly.
 
-- GET /api/jobs/list/
-- GET /api/jobs/details/<job_title>/
-- GET /api/skills/<skill_name>/
-- POST /api/jobs/
-- POST /api/match/
-- POST /api/resume/upload/
-- GET /api/candidates/<candidate_name>/recommendations/
+For example:
 
-## Database
+```text
+Candidate
+    ↓ HAS_SKILL
+Skill
+    ↓ RELATED_TO
+Related Skill
+    ↓ REQUIRES
+Job
+    ↓ OFFERS
+Company
 
-The project uses Neo4j/CognoDB to represent relationships between:
 
-- Companies
-- Jobs
-- Candidates
-- Skills
 
-## GitHub
-
-https://github.com/thontiyugender/job-skill-graph
