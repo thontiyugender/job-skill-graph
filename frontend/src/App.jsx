@@ -1,5 +1,25 @@
+// import { useState } from "react";
+// import "./App.css";
+
+// import { useState } from "react";
+// import "./App.css";
+
+// const API_URL =
+//   import.meta.env.VITE_API_URL ||
+//   "https://job-skill-graph-megi.onrender.com";
+
+
+// const API_URL =
+//   import.meta.env.VITE_API_URL ||
+//   "https://job-skill-graph-megi.onrender.com";
+
+
 import { useState } from "react";
 import "./App.css";
+
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://job-skill-graph-megi.onrender.com";
 
 function App() {
   const [resume, setResume] = useState(null);
@@ -32,7 +52,7 @@ function App() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/resume/upload/",
+        `${API_URL}/api/resume/upload/`,
         {
           method: "POST",
           body: formData,
@@ -49,8 +69,11 @@ function App() {
 
       setResult(data);
     } catch (err) {
+      console.error("Resume upload error:", err);
+
       setError(
-        err.message || "Failed to connect to backend."
+        err.message ||
+          "Failed to connect to backend."
       );
     } finally {
       setLoading(false);
@@ -68,7 +91,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/jobs/details/${encodeURIComponent(
+        `${API_URL}/api/jobs/details/${encodeURIComponent(
           jobTitle
         )}/`
       );
@@ -77,7 +100,8 @@ function App() {
 
       if (!response.ok) {
         throw new Error(
-          data.message || "Failed to load job details."
+          data.message ||
+            "Failed to load job details."
         );
       }
 
@@ -92,8 +116,11 @@ function App() {
           });
       }, 100);
     } catch (err) {
+      console.error("Job details error:", err);
+
       setDetailsError(
-        err.message || "Failed to load job details."
+        err.message ||
+          "Failed to load job details."
       );
     } finally {
       setDetailsLoading(false);
@@ -145,19 +172,13 @@ function App() {
       ====================================================== */}
 
       <header className="header">
-
         <div className="header-content">
-
-          <h1>
-            Job Skill Graph
-          </h1>
+          <h1>Job Skill Graph</h1>
 
           <p>
             AI-Powered Job Recommendation System
           </p>
-
         </div>
-
       </header>
 
       <main className="container">
@@ -226,7 +247,6 @@ function App() {
         ==================================================== */}
 
         {result && (
-
           <section className="results">
 
             {/* =================================================
@@ -240,7 +260,6 @@ function App() {
               </div>
 
               <div>
-
                 <p className="small-title">
                   Candidate
                 </p>
@@ -249,7 +268,6 @@ function App() {
                   {result.candidate ||
                     "Candidate"}
                 </h2>
-
               </div>
 
             </div>
@@ -274,14 +292,12 @@ function App() {
 
                   result.skills.map(
                     (skill, index) => (
-
                       <span
                         className="skill-badge"
                         key={`${skill}-${index}`}
                       >
                         {skill}
                       </span>
-
                     )
                   )
 
@@ -306,7 +322,6 @@ function App() {
               <div className="recommendation-heading">
 
                 <div>
-
                   <h2>
                     Recommended Jobs
                   </h2>
@@ -315,19 +330,15 @@ function App() {
                     Jobs ranked according to
                     your skills.
                   </p>
-
                 </div>
 
                 <div className="job-count">
-
                   {result.recommendations?.length ||
                     0}{" "}
-
                   {result.recommendations?.length ===
                   1
                     ? "Job"
                     : "Jobs"}
-
                 </div>
 
               </div>
@@ -353,9 +364,7 @@ function App() {
                         key={`${job.company || "company"}-${job.job}-${index}`}
                       >
 
-                        {/* =================================
-                            RANK
-                        ================================== */}
+                        {/* RANK */}
 
                         <div
                           className={`rank-badge ${
@@ -367,9 +376,7 @@ function App() {
                           {getRankLabel(index)}
                         </div>
 
-                        {/* =================================
-                            JOB HEADER
-                        ================================== */}
+                        {/* JOB HEADER */}
 
                         <div className="job-header">
 
@@ -409,9 +416,7 @@ function App() {
 
                         </div>
 
-                        {/* =================================
-                            MATCH BAR
-                        ================================== */}
+                        {/* MATCH BAR */}
 
                         <div className="match-section">
 
@@ -443,20 +448,13 @@ function App() {
 
                         </div>
 
-                        {/* =================================
-                            EXACT MATCHES
-                        ================================== */}
+                        {/* EXACT MATCHES */}
 
                         <div className="skill-group">
 
                           <h4>
-
-                            <span
-                              className="section-dot exact-dot"
-                            />
-
+                            <span className="section-dot exact-dot" />
                             Exact Matches
-
                           </h4>
 
                           <div className="skills exact-skills">
@@ -491,20 +489,13 @@ function App() {
 
                         </div>
 
-                        {/* =================================
-                            RELATED SKILLS
-                        ================================== */}
+                        {/* RELATED SKILLS */}
 
                         <div className="skill-group">
 
                           <h4>
-
-                            <span
-                              className="section-dot related-dot"
-                            />
-
+                            <span className="section-dot related-dot" />
                             Related Skills
-
                           </h4>
 
                           <div className="skills related-skills">
@@ -539,20 +530,13 @@ function App() {
 
                         </div>
 
-                        {/* =================================
-                            MISSING SKILLS
-                        ================================== */}
+                        {/* MISSING SKILLS */}
 
                         <div className="skill-group">
 
                           <h4>
-
-                            <span
-                              className="section-dot missing-dot"
-                            />
-
+                            <span className="section-dot missing-dot" />
                             Missing Skills
-
                           </h4>
 
                           <div className="skills missing-skills">
@@ -587,9 +571,7 @@ function App() {
 
                         </div>
 
-                        {/* =================================
-                            SKILL GAP
-                        ================================== */}
+                        {/* SKILL GAP */}
 
                         <div className="skill-gap">
 
@@ -649,9 +631,7 @@ function App() {
 
                         </div>
 
-                        {/* =================================
-                            WHY THIS JOB
-                        ================================== */}
+                        {/* WHY THIS JOB */}
 
                         {job.why_this_job?.length >
                           0 && (
@@ -694,9 +674,7 @@ function App() {
 
                         )}
 
-                        {/* =================================
-                            ACTION BUTTONS
-                        ================================== */}
+                        {/* ACTION BUTTONS */}
 
                         <div className="job-actions">
 
@@ -713,7 +691,9 @@ function App() {
 
                             <a
                               className="apply-button"
-                              href={job.application_url}
+                              href={
+                                job.application_url
+                              }
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -848,8 +828,8 @@ function App() {
                     🏢 Companies
                   </h3>
 
-                  {selectedJob.company_details
-                    ?.length > 0 ? (
+                  {selectedJob.company_details?.length >
+                  0 ? (
 
                     selectedJob.company_details.map(
                       (companyInfo, index) => (
@@ -987,8 +967,7 @@ function App() {
 
                     {result.skills_to_learn.length}{" "}
 
-                    {result.skills_to_learn.length ===
-                    1
+                    {result.skills_to_learn.length === 1
                       ? "Skill"
                       : "Skills"}
 
@@ -1003,7 +982,7 @@ function App() {
 
                       <div
                         className="learning-item"
-                        key={item.skill}
+                        key={`${item.skill}-${index}`}
                       >
 
                         <div className="learning-rank">
@@ -1019,11 +998,9 @@ function App() {
                           <p>
                             Helps improve your
                             match for{" "}
-
                             <strong>
                               {item.job_count}
                             </strong>{" "}
-
                             {item.job_count === 1
                               ? "job"
                               : "jobs"}
@@ -1047,7 +1024,6 @@ function App() {
             )}
 
           </section>
-
         )}
 
       </main>
@@ -1057,6 +1033,4 @@ function App() {
 }
 
 export default App;
-
-
 
